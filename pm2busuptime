@@ -1,0 +1,8 @@
+!eval (async () => {
+    this.bot.discordBot.client.on("messageCreate", async (message) => {
+        if (message.content === "Give me mel's uptime.") {
+            var x = await this.bot.pm2bus.sendData(1, "uptime");
+            message.reply(x);
+        }
+    });
+})();
